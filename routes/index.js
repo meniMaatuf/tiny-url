@@ -7,7 +7,7 @@ let shortUrls = [];
 
 /* GET users listing. */
 router.get('/api/item/:shortcode', function (req, res, next) {
-    const code = req.params.code;
+    const code = req.params.shortcode;
     const item = shortUrls.find(i => i.urlCode === code);
     return res.status(200).json(item || {});
 
@@ -21,7 +21,7 @@ router.post('/api/item', function (req, res, next) {
 
         const item = {
             originalUrl,
-            shortUrl: `http://localhost/api/item/${urlCode}`,
+            shortUrl: `http://localhost:3000/${urlCode}`,
             urlCode
         };
 
@@ -39,7 +39,7 @@ router.post('/api/item', function (req, res, next) {
 ;
 
 router.get('/:shortcode', function (req, res, next) {
-    const code = req.params.code;
+    const code = req.params.shortcode;
     const item = shortUrls.find(i => i.urlCode === code);
     return res.redirect(item.originalUrl);
 
