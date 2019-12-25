@@ -12,6 +12,7 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "pug": "2.0.0-beta11",
-    "shortid": "^2.2.15"
+    "shortid": "^2.2.15",
+    "valid-url": "^1.0.9"
   }
 }
